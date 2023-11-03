@@ -1,0 +1,32 @@
+name: Deploy
+
+on: push
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          {
+            echo "### My Report Header"
+            echo "\`\`\`"
+            echo "| Test | Test |"
+            echo "|------|------|"
+            echo "| value | value |"
+            echo ""
+            echo "\`\`\`"
+          } >> $GITHUB_STEP_SUMMARY
+
+      - run: |
+          {
+            echo "### My Report Header"
+            echo "| Vulnerability type | Number of occurences |"
+            echo "|------|------|"
+            echo "| Critical | 0 |"
+            echo "| High | 1 |"
+            echo "| Medium | 1 |"
+            echo ""
+            echo "[Click here to check your Fortify scan result](https://google.com.br)"
+            echo ""
+            echo "Need any help? [Send us a message in our support channel](https://google.com.br)"
+          } >> $GITHUB_STEP_SUMMARY
